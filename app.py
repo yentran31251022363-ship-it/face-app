@@ -17,25 +17,22 @@ IMG_SIZE    = (180, 180)
 THRESHOLD   = 0.60   # confidence tối thiểu
 
 # ⚠️ SỬA LẠI tên 22 người đúng thứ tự label khi train!
-CLASS_NAMES = [
-    "Person_01", "Person_02", "Person_03", "Person_04", "Person_05",
-    "Person_06", "Person_07", "Person_08", "Person_09", "Person_10",
-    "Person_11", "Person_12", "Person_13", "Person_14", "Person_15",
-    "Person_16", "Person_17", "Person_18", "Person_19", "Person_20",
-    "Person_21", "Person_22",
+CLASS_NAMES =[
+    "Đinh Hữu Khánh Anh", "Đoàn Hùng", "Đỗ An Phúc", "HoangKyAnh", "Lê Quang Dũng",
+    "Lê Tuấn Thành", "Lương Ngọc Thuận", "Ngô Quốc Trung", "Nguyen Ngọc Bao", "Nguyễn Đặng Vinh Phúc",
+    "Nguyễn Hoàng Quế Châu", "Nguyễn Phạm Hoàng An", "Nguyễn Thị Khánh Lê", "Nguyễn Thị Ngọc Tuyết", "Nguyễn Tiến Mạnh",
+    "Nguyễn Việt Đức", "Phạm Gia Thành Duy", "Phạm Hứa Nhật Minh", "Phạm Nguyễn Bảo Châu", "Phạm Phú Hoà",
+    "Trần Hải Yến", "Vũ Quang Thái"
 ]
 
 # ── Load model (cache) ─────────────────────────────────────────────────────────
 @st.cache_resource(show_spinner="⏳ Đang load model...")
 def load_model():
-    return tf.keras.models.load_model(MODEL_PATH)
-
-model = load_model()
-
-face_cascade = cv2.CascadeClassifier(
-    cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
-)
-
+    from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+    return tf.keras.models.load_model(
+        MODEL_PATH,
+        custom_objects={"preprocess_input": preprocess_input},
+    )
 # ── Helpers ────────────────────────────────────────────────────────────────────
 def preprocess(img_rgb: np.ndarray) -> np.ndarray:
     img = Image.fromarray(img_rgb).resize(IMG_SIZE)
