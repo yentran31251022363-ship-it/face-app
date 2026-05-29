@@ -33,6 +33,20 @@ def load_model():
         MODEL_PATH,
         custom_objects={"preprocess_input": preprocess_input},
     )
+ 
+model = load_model()
+ 
+# Download haar cascade nếu chưa có (Streamlit Cloud không có sẵn)
+import urllib.request, os
+ 
+CASCADE_PATH = "haarcascade_frontalface_default.xml"
+if not os.path.exists(CASCADE_PATH):
+    urllib.request.urlretrieve(
+        "https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml",
+        CASCADE_PATH,
+    )
+ 
+face_cascade = cv2.CascadeClassifier(CASCADE_PATH)
 # ── Helpers ────────────────────────────────────────────────────────────────────
 def preprocess(img_rgb: np.ndarray) -> np.ndarray:
     img = Image.fromarray(img_rgb).resize(IMG_SIZE)
