@@ -18,11 +18,11 @@ THRESHOLD   = 0.60   # confidence tối thiểu
 
 # ⚠️ SỬA LẠI tên 22 người đúng thứ tự label khi train!
 CLASS_NAMES =[
-    "Đinh Hữu Khánh Anh", "Đoàn Hùng", "Đỗ An Phúc", "HoangKyAnh", "Lê Quang Dũng",
-    "Lê Tuấn Thành", "Lương Ngọc Thuận", "Ngô Quốc Trung", "Nguyen Ngọc Bao", "Nguyễn Đặng Vinh Phúc",
-    "Nguyễn Hoàng Quế Châu", "Nguyễn Phạm Hoàng An", "Nguyễn Thị Khánh Lê", "Nguyễn Thị Ngọc Tuyết", "Nguyễn Tiến Mạnh",
-    "Nguyễn Việt Đức", "Phạm Gia Thành Duy", "Phạm Hứa Nhật Minh", "Phạm Nguyễn Bảo Châu", "Phạm Phú Hoà",
-    "Trần Hải Yến", "Vũ Quang Thái"
+"Phạm Nguyễn Bảo Châu", "HoangKyAnh", "Lê Quang Dũng", "Lê Tuấn Thành", "Lương Ngọc Thuận",
+    "Nguyen Ngọc Bao", "Nguyễn Hoàng Quế Châu", "Nguyễn Phạm Hoàng An", "Nguyễn Tiến Mạnh", "Nguyễn Việt Đức",
+    "Nguyễn Đặng Vinh Phúc", "Phạm Gia Thành Duy", "Phạm Hứa Nhật Minh", "Phạm Phú Hoà", "Trần Hải Yến",
+    "Vũ Quang Thái", "Đoàn Hùng", "Đỗ An Phúc", "Đinh Hữu Khánh Anh", "Ngô Quốc Trung",
+    "Nguyễn Thị Khánh Lê", "Nguyễn Thị Ngọc Tuyết"
 ]
 
 # ── Load model (cache) ─────────────────────────────────────────────────────────
